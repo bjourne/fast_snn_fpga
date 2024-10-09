@@ -14,12 +14,13 @@ If you find this work useful, consider citing us:
 
 ## Dependencies
 
-* Python 3 with the following packages:
-  ** humanize
-  ** rich
+* Python 3
+* The Python packages[humanize](https://pypi.org/project/humanize/),
+  [rich](https://github.com/Textualize/rich), and
+  [numpy](https://numpy.org/)
 * OpenCL
 
-## Building
+## Building and Running
 
 Look through mysnn/pod2014.py and configure relevant network
 parameters. Then generate network data:
@@ -43,4 +44,11 @@ To run on an FPGA use something like:
 
     /build/csim networks/1.00 10000 opencl fpga/horiz/multi/d 1 0 path/to/file.aocx
 
-Where `path/to/file.aocx` is an FPGA image built with the aoc compiler.
+Where `path/to/file.aocx` is an FPGA image built with the aoc
+compiler. A typical aoc build command:
+
+    aoc -bsp-flow=flat -seed=xxxx -parallel=16 \
+        -ffp-contract=fast -ffp-reassociate -O3 -I../.. \
+        -D RECORD_SPIKES=0 -D WIDTH=16 -D SYN_UNROLL=2 -D SYN_ALIGN=16 \
+        -D N_LANES=16 -D N_FRONT=16 -D USE_DOUBLES=1 -v \
+        -board=B2E2_8GBx4 jit_mono.cl
