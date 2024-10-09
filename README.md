@@ -29,3 +29,18 @@ parameters. Then generate network data:
 Grab some coffee because it takes forever. Then build the simulator:
 
     ./waf configure build
+
+You can simulate on the CPU:
+
+    ./build/csim networks/numpy 1000 cpu s
+
+You can simulate using OpenCL if you have a suitable OpenCL runtime
+installed:
+
+    ./build/csim networks/numpy 1000 opencl cpu/s 0 0 kernels/cpu.cl
+
+To run on an FPGA use something like:
+
+    /build/csim networks/1.00 10000 opencl fpga/horiz/multi/d 1 0 path/to/file.aocx
+
+Where `path/to/file.aocx` is an FPGA image built with the aoc compiler.

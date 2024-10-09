@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Björn Lindqvist <bjourne@gmail.com>
+// Copyright (C) 2024 Björn A. Lindqvist <bjourne@gmail.com>
 #ifndef SHARED_H
 #define SHARED_H
 
@@ -194,13 +194,10 @@ typedef double16 vdouble;
 
 #endif
 
-
-
 #else
 
 #error "Define IS_HOST or IS_DEVICE!"
 
 #endif
-
 
 #endif
