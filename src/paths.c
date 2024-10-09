@@ -1,4 +1,4 @@
-// Copyright (C) 2019, 2022-2023 Björn Lindqvist <bjourne@gmail.com>
+// Copyright (C) 2019, 2022-2024 Björn Lindqvist <bjourne@gmail.com>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
@@ -30,38 +30,6 @@ paths_ext(const char *fname) {
     if(!dot || dot == fname)
         return "";
     return dot + 1;
-}
-
-// Allocating functions
-char *
-paths_stem(const char *path) {
-    const char *path2 = paths_basename(path);
-    char *str = strdup(path2);
-    char *p = strchr(str, '.');
-    if (p) {
-        *p = '\0';
-    }
-    return str;
-}
-
-// There are some weird edge cases which I just ignore here.
-char *
-paths_dirname(char *path) {
-    char *p1 = strrchr(path, '\\');
-    char *p2 = strrchr(path, '/');
-    char *p = MAX(p1, p2);
-    if (!p) {
-        return strdup("");
-    }
-    while ((*p == '/' || *p == '\\') && p != path) {
-        p--;
-    }
-    p++;
-    int len = (int)(p - path);
-    char *buf = (char *)malloc(len + 1);
-    strncpy(buf, path, len);
-    buf[len] = '\0';
-    return buf;
 }
 
 char *
@@ -103,8 +71,6 @@ paths_normalize(const char *path) {
     free(buf);
     return ret;
 }
-
-#include <stdio.h>
 
 char *paths_join(const char *p1, const char *p2) {
     char *x = paths_normalize(p1);
