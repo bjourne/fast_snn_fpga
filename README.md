@@ -26,4 +26,6 @@ parameters. Then generate network data:
 
     PYTHONPATH=. python mysnn/main.py build numpy
 
-Grab some coffee because it takes forever.
+Grab some coffee because it takes forever. Then build the simulator:
+
+    ./waf configure build

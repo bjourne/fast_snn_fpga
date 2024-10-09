@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "array.h"
 #include "common.h"
 #include "npy.h"
 #include "paths.h"

@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <string.h>
 #define CL_TARGET_OPENCL_VERSION 300
-#include "array.h"
 #include "common.h"
 #include "opencl.h"
 
