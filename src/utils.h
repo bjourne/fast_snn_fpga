@@ -1,3 +1,4 @@
+// Copyright (C) 2024 Björn A. Lindqvist <bjourne@gmail.com>
 #ifndef UTILS_H
 #define UTILS_H
 
@@ -8,7 +9,6 @@
 uint64_t nano_count();
 double nanos_to_secs(uint64_t nanos);
 void* aligned_calloc(size_t nmemb, size_t size);
-void mean_std64(double *arr, uint32_t n, double *mean, double *std);
 bool files_read(const char *path, char **data, size_t *size);
 void sleep_cp(unsigned int millis);
 

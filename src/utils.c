@@ -1,3 +1,4 @@
+// Copyright (C) 2024 Björn A. Lindqvist <bjourne@gmail.com>
 #include <assert.h>
 #include <math.h>
 #include <stdio.h>
@@ -56,22 +57,6 @@ aligned_calloc(size_t nmemb, size_t size) {
     void *ptr = aligned_alloc(64, n_bytes);
     memset(ptr, 0, n_bytes);
     return ptr;
-}
-
-void
-mean_std64(double *arr, uint32_t n, double *mean, double *std) {
-    double sum = 0.0, fn = (double)n;
-    for (uint32_t i = 0; i < n; i++) {
-        sum += arr[i];
-    }
-    *mean = sum / fn;
-
-    *std = 0.0;
-    for (uint32_t i = 0; i < n; i++) {
-        double diff = arr[i] - *mean;
-        *std += diff*diff;
-    }
-    *std = sqrt(*std / fn);
 }
 
 void

@@ -49,7 +49,6 @@ var_vec_add_sparse(var_vector *me,
     memcpy(me->array + index * me->el_size, src, me->el_size);
 }
 
-
 void
 var_vec_remove(var_vector *me, void *dst) {
     assert(me->used > 0);
