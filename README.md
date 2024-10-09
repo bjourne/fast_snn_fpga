@@ -15,8 +15,8 @@ If you find this work useful, consider citing us:
 ## Dependencies
 
 * Python 3 with the following packages:
-** humanize
-** rich
+  ** humanize
+  ** rich
 * OpenCL
 
 ## Building
