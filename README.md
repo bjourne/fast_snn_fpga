@@ -6,16 +6,22 @@ Simulation on FPGAs".
 If you find this work useful, consider citing us:
 
 ```
-@article{
-    bal_ap_2024,
-    TODO
-}
+@ARTICLE{10716361,
+  author={Lindqvist, Björn A. and Podobas, Artur},
+  journal={IEEE Access},
+  title={Algorithms for Fast Spiking Neural Network Simulation on FPGAs},
+  year={2024},
+  volume={12},
+  number={},
+  pages={150334-150353},
+  keywords={Field programmable gate arrays;Spiking neural networks;Hardware;Synapses;Logic;Membrane potentials;Brain modeling;Table lookup;Neuroscience;Cortical microcircuit;FPGA;HLS;HPC;OpenCL;simulation;leaky integrate-and-fire;spiking neural networks},
+  doi={10.1109/ACCESS.2024.3479933}}
 ```
 
 ## Dependencies
 
 * Python 3
-* The Python packages[humanize](https://pypi.org/project/humanize/),
+* The Python packages [humanize](https://pypi.org/project/humanize/),
   [rich](https://github.com/Textualize/rich), and
   [numpy](https://numpy.org/)
 * OpenCL
